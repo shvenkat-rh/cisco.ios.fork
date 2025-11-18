@@ -18,7 +18,7 @@ jobs:
     
     steps:
       - name: Checkout current repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       
       - name: Setup Node.js for repomix
         uses: actions/setup-node@v4
@@ -57,7 +57,7 @@ jobs:
           ls -la "$REPOMIX_OUTPUT"
       
       - name: Clone AI-Issue-Triage repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: shvenkat-rh/AI-Issue-Triage
           ref: main
