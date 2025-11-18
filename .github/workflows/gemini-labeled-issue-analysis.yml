@@ -36,7 +36,7 @@ jobs:
           echo "Repomix installed successfully"
           repomix --version
       
-      - name: Generate repomix output for repository
+      - name: Generate repomix output
         run: |
           echo "Reading configuration from triage.config.json..."
           REPO_URL=$(jq -r '.repository.url' triage.config.json)
@@ -45,7 +45,16 @@ jobs:
           echo "Repomix output path: $REPOMIX_OUTPUT"
           
           echo "Running repomix on repository using remote..."
-          repomix --remote "$REPO_URL" --output "$REPOMIX_OUTPUT"
+          repomix \
+          --remote "$REPO_URL" \
+          --style plain \
+          --no-file-summary \
+          --no-directory-structure \
+          --compress \
+          --remove-comments \
+          --remove-empty-lines \
+          --output "$REPOMIX_OUTPUT"
+    
           echo "Repomix output generated successfully"
           ls -la "$REPOMIX_OUTPUT"
       
