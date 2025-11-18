@@ -479,4 +479,3 @@ jobs:
           echo "================================================================"
           echo "Bulk analysis completed! Processed $ISSUE_COUNT labeled issues."
           echo "================================================================"
-
