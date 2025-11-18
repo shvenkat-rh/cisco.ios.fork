@@ -1,0 +1,19 @@
+{
+  "repository": {
+    "url": "https://github.com/ansible-collections/cisco.ios",
+    "description": "Target repository for AI issue analysis"
+  },
+  "repomix": {
+    "output_path": "repomix-output.txt",
+    "description": "Path where repomix output will be stored"
+  },
+  "analysis": {
+    "custom_prompt_path": "sample-prompt.txt",
+    "description": "Path to custom prompt template file for AI analysis (leave empty to use default)"
+  },
+  "gemini": {
+    "model": "gemini-2.0-flash-001",
+    "description": "Gemini model to use for analysis (leave empty or remove to use default: gemini-2.0-flash-001). Other options: gemini-1.5-pro, gemini-1.5-flash, etc."
+  }
+}
+
