@@ -47,7 +47,6 @@ jobs:
             --remote "$REPO_URL" \
             --include plugins/ \
             --style plain \
-            --compress \
             --remove-empty-lines \
             -o "$REPOMIX_OUTPUT"
           echo "Repomix output generated successfully"
