@@ -177,7 +177,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: shvenkat-rh/AI-Issue-Triage
-          ref: main
+          ref: feature/pr-analyzer
           path: ai-triage
           fetch-depth: 1
 
