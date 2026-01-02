@@ -46,6 +46,14 @@ jobs:
           git clone --depth 1 "$REPO_URL" repo-clone
           cd repo-clone
           
+          # Copy .omit-triage from workflow repo if it exists
+          if [ -f ../.omit-triage ]; then
+            echo "Copying .omit-triage from workflow repository..."
+            cp ../.omit-triage ./.omit-triage
+          elif [ -f .omit-triage ]; then
+            echo "Using .omit-triage from cloned repository..."
+          fi
+          
           # Get root-level directories only (excluding hidden dirs like .git)
           echo "Getting root-level directories..."
           find . -maxdepth 1 -type d -not -name '.' -not -name '..*' | sed 's|^\./||' | sort > ../all-dirs.txt
@@ -169,7 +177,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: shvenkat-rh/AI-Issue-Triage
-          ref: feature/pr-analyzer
+          ref: main
           path: ai-triage
           fetch-depth: 1
 
